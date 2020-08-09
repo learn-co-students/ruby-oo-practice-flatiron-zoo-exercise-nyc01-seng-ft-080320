@@ -30,15 +30,9 @@ class Zoo
         end
     end
 
-    def self.all_species
-        Animal.all.map do |a|
-            a.species == species  
-        end
-    end
-
-    def self.find_species 
-        Animal.all.map do |species|
-            species.animal == self  
+    def self.find_species.uniq  
+        Animal.all.map do |animal|
+            animal.species  
         end
     end
 
