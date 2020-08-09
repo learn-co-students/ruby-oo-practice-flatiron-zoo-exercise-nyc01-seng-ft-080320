@@ -9,18 +9,6 @@ class Zoo
     @@all << self
   end
 
-  ##### CLASS METHODS #####
-
-  def self.all
-    @@all
-  end
-
-  def self.find_by_location(location)
-    Zoo.all.select do |zoo|
-      zoo.location == location
-    end
-  end
-
   ##### INSTANCE METHODS #####
 
   def animals 
@@ -44,6 +32,18 @@ class Zoo
   def animal_nicknames
     self.animals.map do |animal|
       animal.nickname
+    end
+  end
+
+  ##### CLASS METHODS #####
+
+  def self.all
+    @@all
+  end
+
+  def self.find_by_location(location)
+    Zoo.all.select do |zoo|
+      zoo.location == location
     end
   end
 
